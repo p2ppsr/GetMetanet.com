@@ -58,7 +58,7 @@ const Hero = () => {
           </div>
 
           <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto fade-in-delayed">
-            Hackathon Early Release Addition
+            Hackathon Early Release Edition
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 slide-up-fast">
