@@ -49,18 +49,16 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 pt-32 pb-16 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="inline-block fade-in-fast">
-            <div className="rounded-full bg-white/5 border border-white/10 px-4 py-2 backdrop-blur-sm">
-              <span className="text-sm font-medium text-web3-accent">Blockchain Simplified</span>
-            </div>
+
+          <div className="relative inline-block">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight fade-in-normal">
+              <span className="text-gradient text-glow">Metanet Desktop</span>
+            </h1>
+            <span className="absolute top-0 right-0 text-xs text-white">Alpha</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight fade-in-normal">
-            <span className="text-gradient text-glow">Metanet Desktop</span>
-          </h1>
-
           <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto fade-in-delayed">
-            Your Gateway to the BSV Blockchain
+            Hackathon Early Release Addition
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 slide-up-fast">
@@ -73,6 +71,7 @@ const Hero = () => {
             </a>
           </div>
         </div>
+
 
         {/* 3D visualization mockup */}
         <div className="mt-12 md:mt-16 max-w-5xl mx-auto slide-up-normal">

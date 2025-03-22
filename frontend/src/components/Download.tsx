@@ -28,8 +28,8 @@ const Download = () => {
       version: "v1.2.0",
       requirementsText: "Ubuntu 20.04 or equivalent",
       buttonText: "Download for Linux",
-      downloadUrl: "#",
-      isComingSoon: true
+      downloadUrl: "/metanet_desktop-x86_64.AppImage",
+      isComingSoon: false
     },
   ];
 
@@ -106,9 +106,18 @@ const Download = () => {
             <div>
               <h4 className="text-lg font-medium text-web3-accent mb-2">Linux</h4>
               <ol className="list-decimal list-inside space-y-2 text-white/80">
-                <li>Coming soon! Stay tuned for the Linux version, or build the source code directly.</li>
+                <li>
+                  Download the <code>metanet_desktop-x86_64.AppImage</code> file from the link above.
+                </li>
+                <li>
+                  Make it executable: <code>chmod +x metanet_desktop-x86_64.AppImage</code>
+                </li>
+                <li>
+                  Run the application: <code>./metanet_desktop-x86_64.AppImage</code>
+                </li>
               </ol>
             </div>
+
           </div>
         </div>
       </div>
