@@ -18,7 +18,7 @@
       "name": "babbage",
       "provider": "CARS",
       "CARSCloudURL": "https://cars.babbage.systems",
-      "projectID": "9c47ebb1f59f0cc25c3b1afb1706b6c0",
+      "projectID": "",
       "network": "mainnet",
       "deploy": [
         "frontend"
