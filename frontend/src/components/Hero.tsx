@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from "react";
-import { Download, ChevronDown } from "lucide-react";
+import { MonitorSmartphone, ChevronDown } from "lucide-react";
 
 const Hero = () => {
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -52,22 +52,27 @@ const Hero = () => {
 
           <div className="relative inline-block">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight fade-in-normal">
-              <span className="text-gradient text-glow">Metanet Desktop</span>
+              Get on the <span className="text-gradient text-glow">Metanet</span>
             </h1>
-            <span className="absolute top-0 right-0 text-xs text-white">Alpha</span>
+            <span className="absolute top-0 right-0 text-xs text-white">Desktop + Mobile</span>
           </div>
 
           <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto fade-in-delayed">
-            Hackathon Early Release Edition
+            Access the BSV-powered internet everywhere with the Metanet Desktop browser and our early access mobile apps.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 slide-up-fast">
-            <a href="#download" className="primary-button flex items-center gap-2 w-full sm:w-auto">
-              <Download size={18} />
-              Download Now
+            <a
+              href="https://desktop.bsvb.tech"
+              className="primary-button flex items-center gap-2 w-full sm:w-auto"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MonitorSmartphone size={18} />
+              Launch Desktop Browser
             </a>
-            <a href="#features" className="secondary-button flex items-center gap-2 w-full sm:w-auto">
-              Learn More
+            <a href="#mobile" className="secondary-button flex items-center gap-2 w-full sm:w-auto">
+              Explore Mobile Apps
             </a>
           </div>
         </div>

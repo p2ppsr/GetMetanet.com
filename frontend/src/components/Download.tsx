@@ -1,48 +1,23 @@
 
-import { Monitor, Apple, Terminal, Clock } from "lucide-react";
-import { toast } from "sonner";
+import { MonitorSmartphone, Apple, Smartphone, ExternalLink } from "lucide-react";
 
 const Download = () => {
-  const platforms = [
+  const mobileApps = [
     {
-      name: "Windows",
-      icon: <Monitor className="h-6 w-6" />,
-      version: "v1.2.0",
-      requirementsText: "Windows 10 or later",
-      buttonText: "Download for Windows",
-      downloadUrl: "#",
-      isComingSoon: true
-    },
-    {
-      name: "macOS",
+      name: "iOS TestFlight Beta",
       icon: <Apple className="h-6 w-6" />,
-      version: "v1.2.0",
-      requirementsText: "macOS 11.0 or later",
-      buttonText: "Download for Mac",
-      downloadUrl: "/Metanet Desktop.dmg",
-      isComingSoon: false
+      description: "Install the Metanet Mobile browser on your iPhone via Apple's TestFlight program.",
+      buttonText: "Join TestFlight",
+      downloadUrl: "https://testflight.apple.com/join/K3jmxevG",
     },
     {
-      name: "Linux",
-      icon: <Terminal className="h-6 w-6" />,
-      version: "v1.2.0",
-      requirementsText: "Ubuntu 20.04 or equivalent",
-      buttonText: "Download for Linux",
-      downloadUrl: "/metanet_desktop-x86_64.AppImage",
-      isComingSoon: false
+      name: "Android APK",
+      icon: <Smartphone className="h-6 w-6" />,
+      description: "Side-load the latest Metanet Mobile APK to explore the BSV web on Android devices.",
+      buttonText: "Download Android APK",
+      downloadUrl: "https://getmetanet.com/android.apk",
     },
   ];
-
-  const handleDownloadClick = (platform: typeof platforms[0], e: React.MouseEvent) => {
-    if (platform.isComingSoon) {
-      e.preventDefault();
-      toast(`${platform.name} version coming soon`, {
-        description: "We're working hard to bring Metanet Desktop to this platform.",
-        icon: <Clock className="h-5 w-5" />,
-        duration: 3000,
-      });
-    }
-  };
 
   return (
     <section id="download" className="section-padding relative bg-black">
@@ -53,71 +28,95 @@ const Download = () => {
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to <span className="text-gradient">Get Started</span>?
+            Ready to <span className="text-gradient">Get on the Metanet</span>?
           </h2>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            Download Metanet Desktop for your preferred platform and start exploring the blockchain today.
+            Choose the experience that fits your device and keep your BSV identity with you on desktop and mobile.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {platforms.map((platform) => (
-            <div
-              key={platform.name}
-              className="glass-card rounded-lg p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:bg-white/10 hover:scale-105"
-            >
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 max-w-5xl mx-auto">
+          <div
+            id="desktop"
+            className="glass-card rounded-lg p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:bg-white/10"
+          >
+            <div>
               <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-4">
-                {platform.icon}
+                <MonitorSmartphone className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">{platform.name}</h3>
-              <span className="text-sm text-web3-accent/80 mb-4">{platform.version}</span>
-              <p className="text-sm text-white/60 mb-6">{platform.requirementsText}</p>
-              <a
-                href={platform.downloadUrl}
-                className="primary-button w-full"
-                onClick={(e) => handleDownloadClick(platform, e)}
-              >
-                {platform.buttonText}
-                {platform.isComingSoon && (
-                  <span className="ml-2 text-xs bg-white/20 px-2 py-0.5 rounded-full">Soon</span>
-                )}
-              </a>
+              <h3 className="text-2xl font-semibold mb-2">Metanet Desktop Browser</h3>
+              <p className="text-white/70 mb-6">
+                Launch the latest web-native Metanet experience directly in your desktop browser. No installation required—just sign in and start browsing the BSV internet.
+              </p>
             </div>
-          ))}
+            <a
+              href="https://desktop.bsvb.tech"
+              className="primary-button w-full flex items-center justify-center gap-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Launch Desktop Browser
+              <ExternalLink size={16} />
+            </a>
+          </div>
+
+          <div id="mobile" className="space-y-6">
+            {mobileApps.map((platform) => (
+              <div
+                key={platform.name}
+                className="glass-card rounded-lg p-6 flex flex-col transition-all duration-300 hover:shadow-lg hover:bg-white/10"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center">
+                    {platform.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">{platform.name}</h3>
+                    <span className="text-xs uppercase tracking-wide text-white/60">Early Access</span>
+                  </div>
+                </div>
+                <p className="text-sm text-white/70 mb-6">{platform.description}</p>
+                <a
+                  href={platform.downloadUrl}
+                  className="primary-button w-full flex items-center justify-center gap-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {platform.buttonText}
+                  <ExternalLink size={16} />
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-16 glass-card rounded-lg p-8 max-w-3xl mx-auto">
-          <h3 className="text-2xl font-semibold mb-4">Installation Guide</h3>
-          <div className="space-y-6">
+        <div className="mt-16 glass-card rounded-lg p-8 max-w-5xl mx-auto">
+          <h3 className="text-2xl font-semibold mb-6">Getting started is simple</h3>
+          <div className="grid gap-8 md:grid-cols-3">
             <div>
-              <h4 className="text-lg font-medium text-web3-accent mb-2">Windows</h4>
+              <h4 className="text-lg font-medium text-web3-accent mb-3">Desktop Browser</h4>
               <ol className="list-decimal list-inside space-y-2 text-white/80">
-                <li>Coming soon! Stay tuned for the Windows version.</li>
+                <li>Open the Metanet Desktop web app in your preferred browser.</li>
+                <li>Sign in with your existing identity or create a new one.</li>
+                <li>Start transacting, building, and browsing on the BSV internet.</li>
               </ol>
             </div>
             <div>
-              <h4 className="text-lg font-medium text-web3-accent mb-2">macOS</h4>
+              <h4 className="text-lg font-medium text-web3-accent mb-3">iOS TestFlight</h4>
               <ol className="list-decimal list-inside space-y-2 text-white/80">
-                <li>Download the macOS .dmg file from the link above.</li>
-                <li>Open the .dmg file and drag Metanet Desktop to your Applications folder.</li>
-                <li>Launch Metanet Desktop from your Applications folder.</li>
+                <li>Install the TestFlight app from the App Store.</li>
+                <li>Tap the "Join TestFlight" button above to accept the Metanet invite.</li>
+                <li>Install Metanet Mobile from TestFlight and enable notifications for updates.</li>
               </ol>
             </div>
             <div>
-              <h4 className="text-lg font-medium text-web3-accent mb-2">Linux</h4>
+              <h4 className="text-lg font-medium text-web3-accent mb-3">Android APK</h4>
               <ol className="list-decimal list-inside space-y-2 text-white/80">
-                <li>
-                  Download the <code>metanet_desktop-x86_64.AppImage</code> file from the link above.
-                </li>
-                <li>
-                  Make it executable: <code>chmod +x metanet_desktop-x86_64.AppImage</code>
-                </li>
-                <li>
-                  Run the application: <code>./metanet_desktop-x86_64.AppImage</code>
-                </li>
+                <li>Download the APK using the button above on your Android device.</li>
+                <li>Approve installs from your browser when prompted by Android.</li>
+                <li>Open Metanet Mobile and connect to the BSV-powered web.</li>
               </ol>
             </div>
-
           </div>
         </div>
       </div>

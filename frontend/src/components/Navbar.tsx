@@ -38,7 +38,8 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Features", href: "#features" },
-    { name: "Download", href: "#download" },
+    { name: "Desktop", href: "#desktop" },
+    { name: "Mobile", href: "#mobile" },
   ];
 
   // Only render when loaded to prevent flash
@@ -60,7 +61,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-2">
               <span className="text-2xl font-bold text-white">
-                <span className="text-gradient">Metanet</span> Desktop
+                Get on the <span className="text-gradient">Metanet</span>
               </span>
             </a>
           </div>
@@ -83,10 +84,12 @@ const Navbar = () => {
 
           <div className="hidden md:block">
             <a
-              href="#download"
+              href="https://desktop.bsvb.tech"
               className="primary-button"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Download Now
+              Launch Desktop
             </a>
           </div>
 
@@ -122,11 +125,13 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#download"
+            href="https://desktop.bsvb.tech"
             onClick={closeMenu}
             className="primary-button mt-4"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Download Now
+            Launch Desktop
           </a>
         </div>
       </div>

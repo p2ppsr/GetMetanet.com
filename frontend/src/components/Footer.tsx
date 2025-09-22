@@ -8,8 +8,9 @@ const Footer = () => {
     {
       title: "Product",
       links: [
+        { name: "Desktop Browser", href: "#desktop" },
+        { name: "Mobile Apps", href: "#mobile" },
         { name: "Features", href: "#features" },
-        { name: "Download", href: "#download" },
       ],
     },
     {

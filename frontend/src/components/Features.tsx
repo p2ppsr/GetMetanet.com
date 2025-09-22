@@ -5,8 +5,8 @@ const Features = () => {
   const features = [
     {
       icon: <Globe className="h-8 w-8 text-web3-accent" />,
-      title: "Universal Compatibility & Interoperability",
-      description: "Built on the vendor-neutral BRC-100 wallet standard, Metanet Desktop effortlessly interacts with any BSV dApp, exchange, marketplace, or blockchain application. Complies fully with the open BRC-100 Wallet Interface, ensuring compatibility with all compliant wallets and apps in the BSV ecosystem.",
+      title: "Seamless Desktop & Mobile Experience",
+      description: "Carry the same powerful Metanet capabilities everywhere. Launch the desktop browser for full workflows or switch to the mobile apps to keep your identity, payments, and sessions moving with you.",
     },
     {
       icon: <Lock className="h-8 w-8 text-web3-accent" />,
@@ -31,7 +31,7 @@ const Features = () => {
             <span className="text-gradient">Powerful</span> Features
           </h2>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            Metanet Desktop provides all the tools you need to interact with the blockchain efficiently.
+            The Metanet browser family keeps your BSV identity in sync across devices while delivering the security and power builders expect.
           </p>
         </div>
 
